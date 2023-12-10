@@ -1,0 +1,79 @@
+﻿@model Online_Exam.Models.Exam
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-4">
+    <h1>Create Exam</h1>
+    <hr />
+
+    <div class="row">
+        <div class="col-md-6">
+            <form asp-action="Create">
+                @if (ViewBag.DisplayEmailAsText)
+                {
+                    <div class="form-group">
+                        <label asp-for="Adminstration_Email" class="control-label">Administration Email</label>
+                        <input asp-for="Adminstration_Email" class="form-control" />
+                        <span asp-validation-for="Adminstration_Email" class="text-danger"></span>
+                    </div>
+                }
+                else
+                {
+                    <div class="form-group">
+                        <label asp-for="Adminstration_Email" class="control-label">Administration Email</label>
+                        <input asp-for="Adminstration_Email" class="form-control" />
+                        <span asp-validation-for="Adminstration_Email" class="text-danger"></span>
+                    </div>
+                }
+
+                <div class="form-group">
+                    <label asp-for="Exam_title" class="control-label">Exam Title</label>
+                    <input asp-for="Exam_title" class="form-control" />
+                    <span asp-validation-for="Exam_title" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Description" class="control-label">Description</label>
+                    <input asp-for="Description" class="form-control" />
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Start_time" class="control-label">Start Time</label>
+                    <input asp-for="Start_time" class="form-control" />
+                    <span asp-validation-for="Start_time" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Duration" class="control-label">Duration</label>
+                    <input asp-for="Duration" class="form-control" />
+                    <span asp-validation-for="Duration" class="text-danger"></span>
+                </div>
+
+
+                <div class="form-group">
+                    <label asp-for="IS_shuffle_Q" class="control-label">Shuffle Questions</label>
+                    <input asp-for="IS_shuffle_Q" type="checkbox" />
+                    <span asp-validation-for="IS_shuffle_Q" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="IS_shuffle_A" class="control-label">Shuffle Answers</label>
+                    <input asp-for="IS_shuffle_A" type="checkbox" />
+                    <span asp-validation-for="IS_shuffle_A" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="mt-2">
+        <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+    </div>
+</div>

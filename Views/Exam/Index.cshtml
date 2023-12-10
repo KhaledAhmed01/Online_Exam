@@ -1,0 +1,73 @@
+﻿@model IEnumerable<Online_Exam.Models.Exam>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Created Exams</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Adminstration_Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Exam_title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Start_time)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Duration)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IS_shuffle_Q)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IS_shuffle_A)
+            </th>
+           
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Adminstration_Email)
+                </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Exam_title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Start_time)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Duration)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IS_shuffle_Q)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IS_shuffle_A)
+            </td>
+            
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Exam_id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Exam_id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Exam_id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
